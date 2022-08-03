@@ -16,9 +16,7 @@
     "prepublish:next": "npm run build",
     "publish:next": "npm publish --access public --tag next",
     "prerelease": "npm run build",
-    "release": "release-it",
-    "test": "jest -w 1 --no-cache --config jest.json",
-    "test:dev": "NODE_ENV=test npm run -s test -- --watchAll"
+    "release": "release-it"
   },
   "peerDependencies": {
     "@azure/functions": "^1.0.3 || ^3.0.0 || ^4.0.0",
