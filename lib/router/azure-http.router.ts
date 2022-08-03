@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { HttpStatus, RequestMethod } from '@nestjs/common';
+import { HttpStatus, RequestMethod, VersioningOptions } from '@nestjs/common';
+import { VersionValue } from '@nestjs/common/interfaces';
 import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 import { AbstractHttpAdapter } from '@nestjs/core';
 import { RouterMethodFactory } from '@nestjs/core/helpers/router-method-factory';
@@ -9,6 +10,19 @@ import TRouter from 'trouter';
 import { AzureReply, AzureRequest } from '../adapter';
 
 export class AzureHttpRouter extends AbstractHttpAdapter {
+  end(response: any, message?: string) {
+    throw new Error('Method not implemented.');
+  }
+  isHeadersSent(response: any) {
+    throw new Error('Method not implemented.');
+  }
+  applyVersionFilter(
+    handler: Function,
+    version: VersionValue,
+    versioningOptions: VersioningOptions
+  ): (req: any, res: any, next: () => void) => Function {
+    throw new Error('Method not implemented.');
+  }
   private readonly routerMethodFactory = new RouterMethodFactory();
 
   constructor() {
